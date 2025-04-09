@@ -1,0 +1,39 @@
+<!-- login.html -->
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Přihlášení</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="login.js" defer></script>
+</head>
+<body>
+  <header id="main-header">
+    <div class="container">
+      <div class="logo">
+        <a href="index.html">
+            <img src="logo.png" alt="Logo">
+          </a>
+      </div>
+      <nav class="navbar">
+        <a href="index.html">Domů</a>
+      </nav>
+    </div>
+  </header>
+
+  <section>
+    <h1>Přihlášení</h1>
+    <form id="loginForm">
+      <input type="text" id="username" placeholder="Uživatelské jméno" required>
+      <input type="password" id="password" placeholder="Heslo" required>
+      <button type="submit">Přihlásit</button>
+      <p id="loginMessage"></p>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 Jakub Staněk | Všechna práva vyhrazena
+  </footer>
+</body>
+</html>

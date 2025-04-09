@@ -1,0 +1,228 @@
+/* Reset a základní stylování */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: url('digital-picture-world-from-outer-space.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  line-height: 1.6;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 10px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  transition: all 0.4s ease;
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  transition: all 0.4s ease;
+}
+
+.logo {
+  text-align: center;
+  transition: all 0.4s ease;
+}
+
+.logo img {
+  height: 150px;
+  transition: all 0.4s ease;
+}
+
+.sticky .logo {
+  order: -1;
+  justify-self: flex-start;
+}
+
+.sticky .logo img {
+  height: 50px;
+}
+
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  padding: 8px 12px;
+  transition: all 0.3s ease;
+}
+
+.navbar a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #FFD700;
+  transition: width 0.3s ease;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+.navbar a:hover {
+  color: #FFD700;
+}
+
+section {
+  padding: 60px 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  margin: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #FFD700;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.photo {
+  flex: 1 1 30%;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.photo img {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.3);
+}
+
+.map-container {
+  margin-top: 20px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+footer {
+  background-color: rgba(0, 0, 0, 0.8);
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+/* Cookies Modal */
+.cookie-modal {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.cookie-modal.active {
+  display: block;
+}
+
+.cookie-buttons {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+.cookie-buttons button {
+  padding: 8px 15px;
+  background-color: #FFD700;
+  color: #000;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cookie-buttons button:hover {
+  background-color: #e6be00;
+}
+
+/* Sticky class toggle */
+.sticky header {
+  padding: 5px 0;
+}
+
+.sticky .container {
+  justify-content: space-between;
+}
+/* Login Form */
+form#loginForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+form#loginForm input {
+  padding: 10px;
+  width: 250px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form#loginForm button {
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: #000;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+form#loginForm button:hover {
+  background-color: #e1b400;
+}
+/* Scroll efekt na header */
+.scrolled .container {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.scrolled .logo img {
+  height: 50px;
+}
+
+.scrolled .navbar {
+  margin-top: 0;
+  justify-content: flex-end;
+  gap: 15px;
+}
