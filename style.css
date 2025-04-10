@@ -40,7 +40,7 @@ header {
 }
 
 .logo img {
-  height: 150px;
+  height: 200px;
   transition: all 0.4s ease;
 }
 
@@ -55,36 +55,76 @@ header {
 
 .navbar {
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+  align-items: center;
+  gap: 30px;
+  padding: 0;
+  list-style: none;
 }
 
 .navbar a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
   position: relative;
-  padding: 8px 12px;
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  padding: 10px;
+  text-transform: uppercase;
+  text-decoration: none;
   transition: all 0.3s ease;
 }
 
 .navbar a::after {
   content: "";
+  display: block;
   position: absolute;
-  left: 0;
-  bottom: 0;
   width: 0;
-  height: 2px;
+  height: 3px;
   background-color: #FFD700;
-  transition: width 0.3s ease;
+  transition: width 0.3s ease-in-out;
+  margin-top: 0;
 }
 
-.navbar a:hover::after {
-  width: 100%;
+.navbar a::before {
+  content: " ";
+  display: block;
+  width: 0;
+  margin-bottom: 0;
+  margin-left: auto;
+  height: 3px;
+  background-color: #FFD700;
+  transition: width 0.3s ease-in-out;
 }
 
 .navbar a:hover {
-  color: #FFD700;
+  padding-left: 0;
+  padding-right: 0;
+  color: #000000;
+}
+
+.navbar a:hover span {
+  transition: background-color .2s linear;
+  transition-delay: .25s;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+.navbar a span {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: transparent;
+  transition: background-color .2s linear;
+}
+
+.navbar a:hover span {
+  height: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #FFD700;
+  color:#000000
+}
+
+.navbar a:hover:after, .navbar a:hover:before {
+  width: 100%;
 }
 
 section {
@@ -181,8 +221,10 @@ footer {
 .sticky .container {
   justify-content: space-between;
 }
+
 /* Login Form */
 form#loginForm {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -190,17 +232,60 @@ form#loginForm {
   margin-top: 20px;
 }
 
+.form-input {
+  position: relative;
+  margin-bottom: 15px;
+}
+
 form#loginForm input {
-  padding: 10px;
-  width: 250px;
-  border: 1px solid #ccc;
+  padding: 15px 20px;
+  width: 300px;
+  height: 40px;
+  border: 2px solid #ccc;
+  outline: none;
+  color: #FFFF;
+  z-index: 1;
+  font-weight: 500;
+  background-color: transparent;
+  transition: all .3s ease;
+  font-size: 16px;
   border-radius: 4px;
+  text-align: left;
+}
+
+form#loginForm label {
+  cursor: text;
+  color: #999;
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  font-size: 16px;
+  font-weight: bold;
+  background: transparent;
+  padding: 0 10px;
+  transition: all .2s ease-in-out;
+}
+
+form#loginForm input:focus,
+form#loginForm input:valid {
+  color: #FFD700;
+  border-color: #FFD700;
+  background-color: #333;
+}
+
+form#loginForm input:focus + label,
+form#loginForm input:valid + label {
+  transform: translateY(-43px);
+  font-size: 14px;
+  color: #FFD700;
 }
 
 form#loginForm button {
   padding: 10px 20px;
   background-color: var(--primary-color);
-  color: #000;
+  color: #f3f3f3;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -209,7 +294,9 @@ form#loginForm button {
 
 form#loginForm button:hover {
   background-color: #e1b400;
+  color: #000;
 }
+
 /* Scroll efekt na header */
 .scrolled .container {
   flex-direction: row;
@@ -225,4 +312,9 @@ form#loginForm button:hover {
   margin-top: 0;
   justify-content: flex-end;
   gap: 15px;
+}
+
+#main-header.scrolled {
+  background-color: rgba(0, 0, 0, 0.85);
+  transition: background-color 0.3s ease;
 }
