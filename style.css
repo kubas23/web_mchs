@@ -5,8 +5,10 @@
   box-sizing: border-box;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital@0;1&display=swap');
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: Rubik, sans-serif;
   background: url('digital-picture-world-from-outer-space.jpg') no-repeat center center fixed;
   background-size: cover;
   color: #fff;
@@ -14,11 +16,15 @@ body {
 }
 
 header {
-  position: sticky;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
   top: 0;
+  height: 200px;
   z-index: 1000;
-  background-color: rgba(0, 0, 0, 0.8);
-  padding: 10px 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 0 40px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   transition: all 0.4s ease;
 }
@@ -40,7 +46,7 @@ header {
 }
 
 .logo img {
-  height: 200px;
+  height: 300px;
   transition: all 0.4s ease;
 }
 
@@ -67,7 +73,8 @@ header {
   font-weight: 600;
   font-size: 15px;
   cursor: pointer;
-  padding: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   text-transform: uppercase;
   text-decoration: none;
   transition: all 0.3s ease;
@@ -129,10 +136,12 @@ header {
 
 section {
   padding: 60px 20px;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.5);
   margin: 20px;
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 h1 {
@@ -305,16 +314,26 @@ form#loginForm button:hover {
 }
 
 .scrolled .logo img {
-  height: 50px;
+  height: 150px;
+  transition: height 0.4s ease;
 }
 
 .scrolled .navbar {
-  margin-top: 0;
   justify-content: flex-end;
   gap: 15px;
 }
 
 #main-header.scrolled {
-  background-color: rgba(0, 0, 0, 0.85);
-  transition: background-color 0.3s ease;
+  height: 70px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  transition: all 0.4s ease;
+  z-index: 999;
+}
+
+header.scrolled #logo {
+  transform: scale(0.8);
 }
