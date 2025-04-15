@@ -15,7 +15,7 @@ body {
   line-height: 1.6;
 }
 
-header {
+#main-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -23,10 +23,10 @@ header {
   top: 0;
   height: 200px;
   z-index: 1000;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.85);
   padding: 0 40px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  transition: all 0.4s ease;
+  transition: all 0.3s ease;
 }
 
 .container {
@@ -48,15 +48,6 @@ header {
 .logo img {
   height: 300px;
   transition: all 0.4s ease;
-}
-
-.sticky .logo {
-  order: -1;
-  justify-self: flex-start;
-}
-
-.sticky .logo img {
-  height: 50px;
 }
 
 .navbar {
@@ -222,11 +213,6 @@ footer {
   background-color: #e6be00;
 }
 
-/* Sticky class toggle */
-.sticky header {
-  padding: 5px 0;
-}
-
 .sticky .container {
   justify-content: space-between;
 }
@@ -324,7 +310,7 @@ form#loginForm button:hover {
 }
 
 #main-header.scrolled {
-  height: 70px;
+  height: 100px;
   position: fixed;
   top: 0;
   width: 100%;
@@ -334,6 +320,6 @@ form#loginForm button:hover {
   z-index: 999;
 }
 
-header.scrolled #logo {
+#main-header.scrolled .logo {
   transform: scale(0.8);
 }
