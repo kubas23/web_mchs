@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kontaktujte nás | MCHS Elektro</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <a href="index.html">← Zpět na hlavní stránku</a>
+    <h1>Kontaktujte nás</h1>
+  </header>
+
+  <main>
+    <form id="kontaktForm" class="kontakt-formular">
+      <label for="name">Jméno:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Zpráva:</label>
+      <textarea id="message" name="message" rows="6" required></textarea>
+
+      <button type="submit">Odeslat zprávu</button>
+    </form>
+
+    <div id="formSuccess" class="success-message" style="display: none;">
+      ✅ Děkujeme za zprávu! Ozveme se co nejdříve.
+    </div>
+  </main>
+
+  <script>
+    const form = document.getElementById("kontaktForm");
+    const success = document.getElementById("formSuccess");
+  
+    form.addEventListener("submit", function(e) {
+      e.preventDefault(); // Zabráníme přesměrování
+  
+      const data = new FormData(form);
+  
+      fetch("https://formspree.io/f/xpwpeqja", {
+        method: "POST",
+        body: data,
+        headers: {
+          'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          form.reset(); // Vymažeme formulář
+          success.style.display = "block"; // Zobrazíme hlášku
+  
+          // ⏳ Přesměrování po 3 sekundách
+          setTimeout(() => {
+            window.location.href = "index.html";
+          }, 3000);
+        } else {
+          alert("⚠️ Nastala chyba při odesílání formuláře.");
+        }
+      }).catch(error => {
+        alert("⚠️ Došlo k technické chybě.");
+      });
+    });
+  </script>
+  
+</body>
+</html>
