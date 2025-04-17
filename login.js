@@ -15,8 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
   
         // Přesměrování nebo další akce
         setTimeout(() => {
-          window.location.href = 'index.html';
-        }, 1500);
+          window.location.href = 'admin.html';
+        });
       } else {
         message.textContent = 'Špatné jméno nebo heslo.';
         message.style.color = 'red';

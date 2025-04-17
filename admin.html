@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <title>Admin – MCHS Elektro</title>
+  <style>
+    .admin-container {
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+    }
+    .admin-image img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      border: 1px solid #ddd;
+    }
+    input[type="file"] {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+        <header id="main-header">
+          <div class="container">
+            <div class="logo">
+              <a href="index.html">
+              <img src="logo.png" alt="Logo">
+            </a>
+            </div>
+            <nav class="navbar">
+              <a href="Elektroinstalace.html"><span>Elektroinstalace</a></span>
+              <a href="servis.html"><span>Servis strojů</a></span>
+              <a href="zabezpeceni.html"><span>Zabezpečení budov</a></span>
+              <a href="reference.html"><span>Realizace</a></span>
+              <a href="kontakt.html"><span>Kontakt</a></span>
+            </nav>
+           </div>
+          </div>
+  <h1>Admin rozhraní (demo)</h1>
+  <p>Uprav si text a obrázek – změny se **neukládají**, ale funguje to jako ukázka.</p>
+
+  <div class="admin-container">
+    <h1>Admin sekce</h1>
+  
+    <label for="nadpis">Nadpis sekce:</label><br>
+    <input type="text" id="nadpis" value="Původní nadpis"><br><br>
+  
+    <label for="popis">Textový popis:</label><br>
+    <textarea id="popis" rows="4" cols="50">Sem přijde popis, který se bude upravovat...</textarea><br><br>
+  
+    <button onclick="ulozitZmeny()">Uložit změny (zatím jen lokálně)</button>
+  </div>
+    <div class="admin-image">
+      <img id="preview" src="obrazky/firma.jpg" alt="Ukázka">
+      <input type="file" id="imageUpload">
+    </div>
+  </div>
+
+  <script>
+    const imageInput = document.getElementById("imageUpload");
+    const previewImg = document.getElementById("preview");
+
+    imageInput.addEventListener("change", function(e) {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(event) {
+          previewImg.src = event.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+  </script>
+</body>
+</html>
