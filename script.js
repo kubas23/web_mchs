@@ -26,3 +26,21 @@ document.addEventListener("DOMContentLoaded", () => {
       footer.innerHTML = `&copy; ${year} Jakub Staněk | Všechna práva vyhrazena`;
     }
   });
+
+  const swiper = new Swiper('.about-slider', {
+    loop: true,
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
+    slidesPerView: 1,
+    spaceBetween: 0,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+  });  

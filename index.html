@@ -7,6 +7,11 @@
   <link rel="stylesheet" href="style.css">
   <script defer src="cookies.js"></script>
   <script src="script.js" defer></script>
+  <!-- Swiper CSS -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </head>
 <body>
   <header id="main-header">
@@ -27,11 +32,34 @@
     </div>
   </header>
 
-  <section>
-    <h1>Vítejte na našich stránkách</h1>
-    <h2>O nás</h2>
-    <p>Text domů doplníš zde ve VSC...</p>
-  </section>
+  <section class="about-container">
+    <div class="about-text">
+      <h1>Vítejte na našich stránkách</h1>
+      <h2>O nás</h2>
+      <p>
+        Společnost MCHS Elektro působí na českém trhu od roku 1995. Specializujeme se na elektroinstalace v bytových i průmyslových objektech, montáže, revize a elektronické zabezpečení budov.<br><br>
+        Naším cílem je poskytovat kvalitní a profesionální služby s důrazem na spokojenost zákazníků. S více než 25 lety zkušeností jsme připraveni realizovat projekty různých rozsahů a náročností.
+      </p>
+    </div>
+  
+    <div class="about-slider-wrapper">
+      <div class="about-slider swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="pics/PHOTO-2024-04-15-21-11-25_1.jpg"/></div>
+          <div class="swiper-slide"><img src="pics/PHOTO-2024-04-15-21-11-25_2.jpg"/></div>
+          <div class="swiper-slide"><img src="pics/PHOTO-2024-04-15-21-11-25_3.jpg"/></div>
+          <div class="swiper-slide"><img src="pics/PHOTO-2024-04-15-21-11-26.jpg"/></div>
+        </div>
+  
+        <!-- Šipky -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+  
+        <!-- Tečky -->
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </section>  
 
   <footer>
     <p>&copy; 2025 Jakub Staněk | Všechna práva vyhrazena</p>
