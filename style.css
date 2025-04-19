@@ -219,6 +219,14 @@ h3 {
   color: #000;
 }
 
+h4 {
+  font-size: 24px;
+}
+
+li {
+  margin-left: 2rem;
+}
+
 .gallery {
   display: flex;
   flex-wrap: wrap;
