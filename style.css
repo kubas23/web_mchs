@@ -575,7 +575,7 @@ form#loginForm button:hover {
 
 .security-text {
   flex: 1;
-  margin-right: 40px;
+  margin-right: 80px;
 }
 
 .text-body {
@@ -584,7 +584,7 @@ form#loginForm button:hover {
 
 .security-image {
   flex: 0 0 40%;
-  max-width: 500px;
+  max-width: 400px;
 }
 
 .security-image img {
