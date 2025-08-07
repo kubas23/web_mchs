@@ -3,6 +3,12 @@
 
 document.addEventListener("DOMContentLoaded", () => {
     const navLinks = document.querySelectorAll(".navbar a");
+      const hamburger = document.getElementById("hamburger");
+  const navbarWrapper = document.getElementById("navbar-wrapper");
+
+  hamburger.addEventListener("click", function () {
+    navbarWrapper.classList.toggle("open");
+  });
   
     navLinks.forEach(link => {
       const text = link.textContent.trim();
