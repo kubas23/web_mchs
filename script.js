@@ -33,6 +33,67 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+let currentIndex = 0;
+let images = [];
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Najdi všechny obrázky v galerii
+  images = document.querySelectorAll(".gallery img");
+
+  // Každému obrázku nastav onclick
+  images.forEach((img, index) => {
+    img.style.cursor = "pointer";
+    img.addEventListener("click", () => {
+      openLightbox(index);
+    });
+  });
+
+  // Klávesy: ESC a šipky
+  document.addEventListener("keydown", (e) => {
+    const lightbox = document.getElementById("lightbox");
+    if (lightbox.style.display === "flex") {
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowRight") changeImage(1);
+      if (e.key === "ArrowLeft") changeImage(-1);
+    }
+  });
+});
+
+function openLightbox(index) {
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  const lightboxCaption = document.getElementById("lightbox-caption");
+
+  currentIndex = index;
+
+  const img = images[currentIndex];
+  lightboxImg.src = img.src;
+  lightboxCaption.innerText = img.alt;
+
+  lightbox.style.display = "flex";
+}
+
+function closeLightbox(event) {
+  const lightbox = document.getElementById("lightbox");
+  if (!event || event.target.id === "lightbox" || event.target.id === "closeBtn") {
+    lightbox.style.display = "none";
+  }
+}
+
+function changeImage(direction) {
+  currentIndex += direction;
+  if (currentIndex < 0) currentIndex = images.length - 1;
+  if (currentIndex >= images.length) currentIndex = 0;
+
+  const img = images[currentIndex];
+  const lightboxImg = document.getElementById("lightbox-img");
+  const lightboxCaption = document.getElementById("lightbox-caption");
+
+  lightboxImg.src = img.src;
+  lightboxCaption.innerText = img.alt;
+}
+
+
   const swiper = new Swiper('.about-slider', {
     loop: true,
     autoplay: {

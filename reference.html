@@ -4,9 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MCHS Elektro</title>
+   <meta name="description" content="Profesionální elektroinstalace a servis v Šumperku a okolí. Elektrikář s dlouholetou praxí. Kontaktujte nás ještě dnes.">
+  <meta name="keywords" content="elektroinstalace Šumperk, elektrikář Šumperk, MCHS elektro, revize, zabezpečení budov">
+  <meta name="author" content="MCHS Elektro">
   <link rel="stylesheet" href="style.css">
   <script defer src="cookies.js"></script>
   <script src="script.js" defer></script>
+  <link rel="icon" href="favicon.png" type="image/png">
 </head>
 <body>
   <header id="main-header">
@@ -16,6 +20,12 @@
             <img src="logo.png" alt="Logo">
           </a>
       </div>
+         <div class="hamburger" id="hamburger">
+           <span></span>
+           <span></span>
+           <span></span>
+    </div>
+      <div class="navbar-wrapper" id="navbar-wrapper">
       <nav class="navbar">
         <a href="Elektroinstalace.html">Elektroinstalace</a>
         <a href="servis.html">Servis strojů</a>
@@ -23,6 +33,7 @@
         <a href="reference.html">Realizace</a>
         <a href="kontakt.html">Kontakt</a>
       </nav>
+      </div>
     </div>
   </header>
 
@@ -30,41 +41,49 @@
     <h1>Realizace</h1>
     <div class="gallery">
       <div class="photo">
-        <img src="pics/osvetleni, odevni firma.png" alt="Reference 1">
+        <img src="pics/osvetleni, odevni firma.png" alt="Reference 1" onclick="openLightbox(this)">
         <p>Osvětlení, oděvní firma</p>
       </div>
       <div class="photo">
-        <img src="pics/Logisticky sklad CBA.png" alt="Reference 2">
+        <img src="pics/Logisticky sklad CBA.png" alt="Reference 2" onclick="openLightbox(this)">
         <p>Logistický sklad CBA</p>
       </div>
       <div class="photo">
-        <img src="pics/Rozvody NN resort Bludovecek.png" alt="Reference 3">
+        <img src="pics/Rozvody NN resort Bludovecek.png" alt="Reference 3" onclick="openLightbox(this)">
         <p>Rozvody NN resort Bludoveček</p>
       </div>
       <div class="photo">
-        <img src="pics/Komposter Loucna nad Desnou.png" alt="Reference 4">
+        <img src="pics/Komposter Loucna nad Desnou.png" alt="Reference 4" onclick="openLightbox(this)">
         <p>Kompostér v Loučné nad Desnou</p>
       </div>
       <div class="photo">
-        <img src="pics/Logisticky sklad CBA_1.png" alt="Reference 5">
+        <img src="pics/Logisticky sklad CBA_1.png" alt="Reference 5" onclick="openLightbox(this)">
         <p>Logistický sklad CBA</p>
       </div>
       <div class="photo">
-        <img src="pics/Osvetleni telocvicny v Postrelmove.png" alt="Reference 6">
+        <img src="pics/Osvetleni telocvicny v Postrelmove.png" alt="Reference 6" onclick="openLightbox(this)">
         <p>Osvětlení v postřelmovské tělocvičně</p>
       </div>
       <div class="photo">
-      <img src="pics/RD Dolni studenky.png" alt="Reference 7">
+      <img src="pics/RD Dolni studenky.png" alt="Reference 7" onclick="openLightbox(this)">
       <p>Rodinný dům v Dolních Studénkách</p>
     </div>
     <div class="photo">
-    <img src="pics/Logisticky sklad CBA_2.png" alt="Reference 8">
+    <img src="pics/Logisticky sklad CBA_2.png" alt="Reference 8" onclick="openLightbox(this)">
     <p>Logistický sklad CBA</p>
    </div>
    <div class="photo">
-     <img src="pics/Podlahove vytapeni.png" alt="Reference 9">
+     <img src="pics/Podlahove vytapeni.png" alt="Reference 9" onclick="openLightbox(this)">
      <p>Podlahové vytápění</p>
     </div>
+<!-- Lightbox -->
+<div id="lightbox" onclick="closeLightbox(event)">
+  <span id="closeBtn" onclick="closeLightbox()"></span>
+  <img id="lightbox-img" src="" alt="">
+  <div id="lightbox-caption"></div>
+  <div class="arrow left" onclick="changeImage(-1)"></div>
+  <div class="arrow right" onclick="changeImage(1)"></div>
+</div>
     </div>
   </section>
 
